@@ -7,313 +7,103 @@
 <meta name="description" content="Senior software engineer with 16+ years across distributed systems, pricing infrastructure, and adaptive AI. Previously Tech Lead at Apple and Walmart. PhD in Algorithms & Game Theory.">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #f7f6f2;
-  --paper: #ffffff;
-  --ink: #18181b;
-  --muted: #6b7280;
-  --line: #e4e1da;
-  --accent: #4338ca;
-  --accent2: #0f766e;
-  --accent3: #c2410c;
-  --soft: #f0ede6;
-  --soft2: #ecfdf5;
-  --soft3: #fff7ed;
-}
-*, *::before, *::after { box-sizing: border-box; }
-body {
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 16px;
-  line-height: 1.75;
-  color: var(--ink);
-  background: var(--bg);
-  margin: 0;
-  padding: 0;
-}
-.page {
-  max-width: 980px;
-  margin: 0 auto;
-  background: var(--paper);
-  border-left: 1px solid var(--line);
-  border-right: 1px solid var(--line);
-  min-height: 100vh;
-}
+:root{--bg:#f7f6f2;--paper:#ffffff;--ink:#18181b;--muted:#6b7280;--line:#e4e1da;--accent:#4338ca;--accent2:#0f766e;--accent3:#c2410c;--soft:#f0ede6;--soft2:#ecfdf5;--soft3:#fff7ed}
+*,*::before,*::after{box-sizing:border-box}
+body{font-family:'DM Sans',system-ui,sans-serif;font-size:16px;line-height:1.75;color:var(--ink);background:var(--bg);margin:0;padding:0}
+.page{max-width:980px;margin:0 auto;background:var(--paper);border-left:1px solid var(--line);border-right:1px solid var(--line);min-height:100vh}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:.85rem 2.5rem;border-bottom:1px solid var(--line);background:#fafaf8;flex-wrap:wrap;gap:.5rem}
+.topbar-name{font-family:'JetBrains Mono',monospace;font-size:.82rem;font-weight:500;color:var(--ink);letter-spacing:.02em}
+.topbar-links{display:flex;gap:1.25rem;flex-wrap:wrap;align-items:center}
+.topbar-links a{color:var(--muted);text-decoration:none;font-size:.85rem;font-weight:500;transition:color .15s}
+.topbar-links a:hover{color:var(--accent)}
+.btn-contact{cursor:pointer;font-family:'DM Sans',system-ui,sans-serif;font-size:.82rem;font-weight:600;background:transparent;border:1px solid var(--accent);color:var(--accent);padding:.25rem .85rem;border-radius:6px;transition:all .15s}
+.btn-contact:hover{background:var(--accent);color:#fff}
+.hero{padding:4rem 2.5rem 3rem;border-bottom:1px solid var(--line);background:linear-gradient(165deg,#eeeaf7 0%,#f7f6f2 50%,#fff 100%);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,rgba(67,56,202,.06) 0%,transparent 70%);pointer-events:none}
+.hero-eyebrow{font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
+.hero h1{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(2rem,4vw,2.8rem);line-height:1.2;margin:0 0 1rem;max-width:780px}
+.hero-sub{font-size:1.05rem;color:#444;max-width:660px;line-height:1.7;margin-bottom:2rem}
+.hero-sub p{margin:0 0 .35rem}
+.cta-row{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:2rem}
+.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.6rem 1.3rem;border-radius:8px;font-size:.9rem;font-weight:600;text-decoration:none;transition:all .15s;border:1px solid transparent}
+.btn-primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn-primary:hover{background:#3730a3;border-color:#3730a3}
+.btn-secondary{background:#fff;color:var(--ink);border-color:var(--line)}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+.btn-ghost{background:transparent;color:var(--muted);border-color:var(--line);font-size:.84rem;padding:.5rem 1rem}
+.btn-ghost:hover{color:var(--ink);border-color:#bbb}
+.section{padding:3rem 2.5rem;border-bottom:1px solid var(--line)}
+.section-label{font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem}
+h2{font-family:'DM Serif Display',Georgia,serif;font-size:1.7rem;line-height:1.25;margin:0 0 .5rem}
+h3{font-size:1rem;font-weight:600;margin:1.5rem 0 .4rem;color:#222}
+p{margin:0 0 1rem}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.audience-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1rem;margin-top:1.5rem}
+.audience-card{border:1px solid var(--line);border-radius:12px;padding:1.5rem 1.5rem 1.25rem;background:#fff;transition:border-color .15s,box-shadow .15s}
+.audience-card:hover{border-color:var(--accent);box-shadow:0 2px 12px rgba(67,56,202,.08)}
+.ac-icon{font-size:1.5rem;margin-bottom:.6rem;display:block;line-height:1}
+.ac-title{font-family:'DM Serif Display',Georgia,serif;font-size:1.15rem;font-weight:400;margin:0 0 .3rem;color:var(--ink)}
+.ac-desc{font-size:.87rem;color:var(--muted);margin:0 0 1rem;line-height:1.6}
+.ac-links{display:flex;flex-direction:column;gap:.35rem}
+.ac-links a{font-size:.84rem;font-weight:500;color:var(--accent);display:flex;align-items:center;gap:.4rem}
+.ac-links a::before{content:'→';font-size:.8rem}
+.ac-links a:hover{text-decoration:underline}
+.project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-top:1.5rem}
+.project-card{border:1px solid var(--line);border-radius:12px;padding:1.4rem 1.4rem 1.2rem;background:#fff}
+.pc-tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--accent);background:#eef2ff;padding:.18rem .6rem;border-radius:4px;margin-bottom:.65rem}
+.pc-tag.green{color:var(--accent2);background:#f0fdf4}
+.pc-tag.orange{color:var(--accent3);background:#fff7ed}
+.project-card h3{font-family:'DM Serif Display',Georgia,serif;font-size:1.1rem;font-weight:400;margin:0 0 .4rem}
+.project-card p{font-size:.87rem;color:#555;margin:0 0 .9rem;line-height:1.65}
+.pc-link{font-size:.83rem;font-weight:600;color:var(--accent)}
+.pc-link::after{content:' →'}
+.build-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.75rem;margin-top:1.25rem}
+.build-item{background:var(--soft);border-radius:8px;padding:.9rem 1rem;font-size:.88rem;color:#333;border-left:3px solid var(--accent);line-height:1.5}
+footer{padding:2rem 2.5rem;border-top:2px solid var(--line);background:#fafaf8;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-left{font-size:.85rem;color:var(--muted)}
+.footer-left strong{color:var(--ink);font-size:.9rem}
+.footer-links{display:flex;gap:1.25rem;flex-wrap:wrap}
+.footer-links a{font-size:.85rem;color:var(--accent);text-decoration:none;font-weight:500}
+.footer-links a:hover{text-decoration:underline}
 
-/* ── TOPBAR ── */
-.topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: .85rem 2.5rem;
-  border-bottom: 1px solid var(--line);
-  background: #fafaf8;
-  flex-wrap: wrap;
-  gap: .5rem;
-}
-.topbar-name {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: .82rem;
-  font-weight: 500;
-  color: var(--ink);
-  letter-spacing: .02em;
-}
-.topbar-links {
-  display: flex;
-  gap: 1.25rem;
-  flex-wrap: wrap;
-  align-items: center;
-}
-.topbar-links a {
-  color: var(--muted);
-  text-decoration: none;
-  font-size: .85rem;
-  font-weight: 500;
-  transition: color .15s;
-}
-.topbar-links a:hover { color: var(--accent); }
-.topbar-links a.cta {
-  color: var(--accent);
-  border: 1px solid var(--accent);
-  padding: .2rem .75rem;
-  border-radius: 6px;
-  font-size: .82rem;
-}
-.topbar-links a.cta:hover { background: var(--accent); color: #fff; }
+/* ── contact modal ── */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:100;align-items:center;justify-content:center;padding:1.5rem}
+.modal-overlay.open{display:flex}
+.modal{background:var(--paper);border-radius:14px;padding:2rem 2rem 1.75rem;width:100%;max-width:480px;box-shadow:0 8px 40px rgba(0,0,0,.18)}
+.modal-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1.25rem}
+.modal-title{font-family:'DM Serif Display',Georgia,serif;font-size:1.4rem;line-height:1.2;margin:0}
+.modal-sub{font-size:.85rem;color:var(--muted);margin:.2rem 0 0}
+.modal-close{background:none;border:none;cursor:pointer;font-size:1.3rem;color:var(--muted);padding:0 .2rem;line-height:1;flex-shrink:0}
+.modal-close:hover{color:var(--ink)}
+.form-group{margin-bottom:1rem}
+.form-group label{display:block;font-size:.83rem;font-weight:600;color:#444;margin-bottom:.35rem}
+.form-group input,.form-group textarea{width:100%;font-family:'DM Sans',system-ui,sans-serif;font-size:.92rem;padding:.6rem .85rem;border:1px solid var(--line);border-radius:7px;background:#fafaf8;color:var(--ink);outline:none;transition:border-color .15s;resize:vertical}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--accent);background:#fff}
+.form-group textarea{min-height:110px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.form-footer{display:flex;align-items:center;justify-content:space-between;margin-top:1.25rem;flex-wrap:wrap;gap:.75rem}
+.form-note{font-size:.78rem;color:var(--muted);line-height:1.5}
+.form-note a{color:var(--accent)}
+.btn-submit{background:var(--accent);color:#fff;border:none;border-radius:8px;padding:.6rem 1.4rem;font-family:'DM Sans',system-ui,sans-serif;font-size:.9rem;font-weight:600;cursor:pointer;transition:background .15s}
+.btn-submit:hover{background:#3730a3}
+.btn-submit:disabled{background:#9ca3af;cursor:not-allowed}
+.form-success{display:none;text-align:center;padding:1.5rem 0 .5rem}
+.form-success .success-icon{font-size:2.5rem;margin-bottom:.75rem;display:block;color:var(--accent2)}
+.form-success p{font-size:.95rem;color:#333;margin:0}
 
-/* ── HERO ── */
-.hero {
-  padding: 4rem 2.5rem 3rem;
-  border-bottom: 1px solid var(--line);
-  background: linear-gradient(165deg, #eeeaf7 0%, #f7f6f2 50%, #fff 100%);
-  position: relative;
-  overflow: hidden;
-}
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -60px; right: -60px;
-  width: 320px; height: 320px;
-  background: radial-gradient(circle, rgba(67,56,202,.06) 0%, transparent 70%);
-  pointer-events: none;
-}
-.hero-eyebrow {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: .72rem;
-  font-weight: 500;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 1rem;
-}
-.hero h1 {
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-size: clamp(2rem, 4vw, 2.8rem);
-  line-height: 1.2;
-  margin: 0 0 1rem;
-  max-width: 780px;
-}
-.hero-sub {
-  font-size: 1.05rem;
-  color: #444;
-  max-width: 660px;
-  line-height: 1.7;
-  margin-bottom: 2rem;
-}
-.hero-sub p { margin: 0 0 .35rem; }
-
-/* ── CTA BUTTONS ── */
-.cta-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .75rem;
-  margin-bottom: 2rem;
-}
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: .4rem;
-  padding: .6rem 1.3rem;
-  border-radius: 8px;
-  font-size: .9rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all .15s;
-  border: 1px solid transparent;
-}
-.btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
-.btn-primary:hover { background: #3730a3; border-color: #3730a3; }
-.btn-secondary { background: #fff; color: var(--ink); border-color: var(--line); }
-.btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
-.btn-ghost { background: transparent; color: var(--muted); border-color: var(--line); font-size: .84rem; padding: .5rem 1rem; }
-.btn-ghost:hover { color: var(--ink); border-color: #bbb; }
-
-/* ── SECTIONS ── */
-.section {
-  padding: 3rem 2.5rem;
-  border-bottom: 1px solid var(--line);
-}
-.section-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: .72rem;
-  font-weight: 600;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: .9rem;
-}
-h2 {
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-size: 1.7rem;
-  line-height: 1.25;
-  margin: 0 0 .5rem;
-}
-h3 { font-size: 1rem; font-weight: 600; margin: 1.5rem 0 .4rem; color: #222; }
-p { margin: 0 0 1rem; }
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-/* ── AUDIENCE CARDS ── */
-.audience-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-.audience-card {
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 1.5rem 1.5rem 1.25rem;
-  background: #fff;
-  transition: border-color .15s, box-shadow .15s;
-}
-.audience-card:hover {
-  border-color: var(--accent);
-  box-shadow: 0 2px 12px rgba(67,56,202,.08);
-}
-.ac-icon {
-  font-size: 1.5rem;
-  margin-bottom: .6rem;
-  display: block;
-  line-height: 1;
-}
-.ac-title {
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-size: 1.15rem;
-  font-weight: 400;
-  margin: 0 0 .3rem;
-  color: var(--ink);
-}
-.ac-desc {
-  font-size: .87rem;
-  color: var(--muted);
-  margin: 0 0 1rem;
-  line-height: 1.6;
-}
-.ac-links { display: flex; flex-direction: column; gap: .35rem; }
-.ac-links a {
-  font-size: .84rem;
-  font-weight: 500;
-  color: var(--accent);
-  display: flex;
-  align-items: center;
-  gap: .4rem;
-}
-.ac-links a::before { content: '→'; font-size: .8rem; }
-.ac-links a:hover { text-decoration: underline; }
-
-/* ── SIGNATURE PROJECTS ── */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-.project-card {
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 1.4rem 1.4rem 1.2rem;
-  background: #fff;
-}
-.pc-tag {
-  display: inline-block;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: .68rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .07em;
-  color: var(--accent);
-  background: #eef2ff;
-  padding: .18rem .6rem;
-  border-radius: 4px;
-  margin-bottom: .65rem;
-}
-.pc-tag.green { color: var(--accent2); background: #f0fdf4; }
-.pc-tag.orange { color: var(--accent3); background: #fff7ed; }
-.project-card h3 {
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-size: 1.1rem;
-  font-weight: 400;
-  margin: 0 0 .4rem;
-}
-.project-card p {
-  font-size: .87rem;
-  color: #555;
-  margin: 0 0 .9rem;
-  line-height: 1.65;
-}
-.pc-link {
-  font-size: .83rem;
-  font-weight: 600;
-  color: var(--accent);
-}
-.pc-link::after { content: ' →'; }
-
-/* ── WHAT I BUILD ── */
-.build-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: .75rem;
-  margin-top: 1.25rem;
-}
-.build-item {
-  background: var(--soft);
-  border-radius: 8px;
-  padding: .9rem 1rem;
-  font-size: .88rem;
-  color: #333;
-  border-left: 3px solid var(--accent);
-  line-height: 1.5;
-}
-
-/* ── FOOTER ── */
-footer {
-  padding: 2rem 2.5rem;
-  border-top: 2px solid var(--line);
-  background: #fafaf8;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-.footer-left { font-size: .85rem; color: var(--muted); }
-.footer-left strong { color: var(--ink); font-size: .9rem; }
-.footer-links { display: flex; gap: 1.25rem; flex-wrap: wrap; }
-.footer-links a { font-size: .85rem; color: var(--accent); text-decoration: none; font-weight: 500; }
-.footer-links a:hover { text-decoration: underline; }
-
-@media (max-width: 640px) {
-  .hero { padding: 2.5rem 1.5rem 2rem; }
-  .section { padding: 2rem 1.5rem; }
-  .topbar { padding: .75rem 1.5rem; }
-  footer { padding: 1.5rem; }
+@media(max-width:640px){
+  .hero{padding:2.5rem 1.5rem 2rem}
+  .section{padding:2rem 1.5rem}
+  .topbar{padding:.75rem 1.5rem}
+  footer{padding:1.5rem}
+  .form-row{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 <div class="page">
 
-<!-- TOPBAR -->
 <div class="topbar">
   <span class="topbar-name">Praneeth Tota</span>
   <div class="topbar-links">
@@ -321,17 +111,16 @@ footer {
     <a href="https://praneethtota.github.io/Adaptive-Utility-Agent" target="_blank">Research</a>
     <a href="https://www.linkedin.com/in/praneethtota/" target="_blank">LinkedIn</a>
     <a href="https://github.com/praneethtota" target="_blank">GitHub</a>
-    <a href="/cdn-cgi/l/email-protection#9eeeecfff0fbfbeaf6acaeaedef9f3fff7f2b0fdf1f3" class="cta">Get in touch</a>
+    <button class="btn-contact" onclick="openModal()">Get in touch</button>
   </div>
 </div>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-eyebrow">Sunnyvale, CA · Staff Engineer · AI Systems · Distributed Infrastructure</div>
   <h1>Building production-grade AI systems that learn from failure — without retraining</h1>
   <div class="hero-sub">
     <p>16+ years across software engineering, systems design, and academia — PhD in Algorithms &amp; Game Theory.</p>
-    <p>Previously Tech Lead at Apple (global pricing infrastructure) and Walmart (last-mile delivery platform, 4,000+ stores).</p>
+    <p>Previously Tech Lead at Apple (global pricing infrastructure, contract via Infosys) and Walmart (last-mile delivery, 4,000+ stores, contract via Infosys).</p>
     <p>Currently building adaptive control systems for LLMs: a utility-governed framework that reduces repeated errors by 69.6% without waiting for a new model release.</p>
   </div>
   <div class="cta-row">
@@ -343,25 +132,21 @@ footer {
   </div>
 </div>
 
-<!-- DECISION SURFACE -->
 <div class="section">
   <div class="section-label">Start here</div>
   <h2>What are you looking for?</h2>
   <p style="color:#555;max-width:620px;margin-bottom:0;">Three audiences, three paths. Go directly to what's relevant.</p>
-
   <div class="audience-grid">
-
     <div class="audience-card">
       <span class="ac-icon">🧑‍💼</span>
       <div class="ac-title">Recruiters &amp; Hiring Managers</div>
-      <p class="ac-desc">10+ years production engineering at Apple and Walmart. Hands-on systems delivery at scale, team leadership, cross-functional ownership.</p>
+      <p class="ac-desc">10+ years production engineering on critical systems at Apple and Walmart. Hands-on delivery at scale, team leadership, cross-functional ownership.</p>
       <div class="ac-links">
         <a href="resume.html">Resume — full experience and skills</a>
-        <a href="#experience">Experience summary below</a>
+        <a href="#experience">Experience summary on this page</a>
         <a href="https://praneethtota.github.io/Adaptive-Utility-Agent/productionizing_adaptive_utility_agent_v0_5.html" target="_blank">Production architecture page</a>
       </div>
     </div>
-
     <div class="audience-card">
       <span class="ac-icon">⚙️</span>
       <div class="ac-title">Staff+ Engineers &amp; Interviewers</div>
@@ -372,77 +157,148 @@ footer {
         <a href="https://praneethtota.github.io/Adaptive-Utility-Agent/domain_ai_datacenters_v0_5.html" target="_blank">AI infrastructure &amp; GPU fleet economics</a>
       </div>
     </div>
-
     <div class="audience-card">
       <span class="ac-icon">🧠</span>
       <div class="ac-title">Technical Peers &amp; Curious Readers</div>
-      <p class="ac-desc">Formal framework grounded in mechanism design and utility theory. VCG arbitration, Lyapunov-stable personality dynamics, validated simulation results.</p>
+      <p class="ac-desc">Formal framework grounded in mechanism design and utility theory. VCG arbitration, Lyapunov-stable dynamics, validated simulation results.</p>
       <div class="ac-links">
         <a href="https://praneethtota.github.io/Adaptive-Utility-Agent/whitepaper_full_v0_5.html" target="_blank">Full whitepaper — theory + proofs + results</a>
         <a href="https://praneethtota.github.io/Adaptive-Utility-Agent/tutorial_v0_5.html" target="_blank">Builder's tutorial — architecture in code</a>
         <a href="https://praneethtota.github.io/Adaptive-Utility-Agent" target="_blank">All domain deep-dives</a>
       </div>
     </div>
-
   </div>
 </div>
 
-<!-- SIGNATURE PROJECTS -->
 <div class="section">
   <div class="section-label">Signature work</div>
   <h2>Three things worth understanding</h2>
-
   <div class="project-grid">
-
     <div class="project-card">
       <div class="pc-tag">Research · 2026</div>
       <h3>Adaptive Utility Agent</h3>
-      <p>A utility-governed correction framework for deployed LLMs. Errors are detected, stored as verified corrections, and prevented from recurring — continuously, without retraining. Validated: 69.6% reduction in repeated errors, +10.5% correctness gain from principled routing (p = 0.029), r = 0.461 utility-correctness correlation (p &lt; 10⁻⁴⁰).</p>
+      <p>A utility-governed correction framework for deployed LLMs. Errors detected, stored as verified corrections, prevented from recurring — continuously, without retraining. Validated: 69.6% error reduction, +10.5% correctness gain from principled routing (p = 0.029), r = 0.461 utility-correctness correlation (p &lt; 10⁻⁴⁰).</p>
       <a href="https://praneethtota.github.io/Adaptive-Utility-Agent" target="_blank" class="pc-link">Full documentation site</a>
     </div>
-
     <div class="project-card">
       <div class="pc-tag green">Apple · Contract via Infosys · 2022–Present</div>
       <h3>Global Pricing Platform</h3>
-      <p>Owned end-to-end design and evolution of the pricing platform powering Apple product pricing across all regions — high-stakes launch events, strict correctness and latency requirements. Led AWS migration that reduced annual downtime from ~48 hours to ~4 hours. Validation frameworks that cut production incidents by over 90%.</p>
+      <p>Owned end-to-end design and evolution of the pricing platform powering Apple product pricing across all regions — high-stakes launch events, strict correctness and latency requirements. Led AWS migration reducing annual downtime from ~48 hours to ~4 hours. Validation frameworks cut production incidents by over 90%.</p>
       <a href="resume.html" class="pc-link">Full details in resume</a>
     </div>
-
     <div class="project-card">
       <div class="pc-tag orange">Walmart · Contract via Infosys · 2019–2022</div>
       <h3>Last-Mile Delivery Platform</h3>
-      <p>Technical lead on delivery infrastructure supporting 4,000+ Walmart stores under 2-hour SLA. Built observability-driven debugging workflows that cut mean incident response time from 45 to 20 minutes. Diagnosed Cassandra consistency failures, implemented root-cause fixes. Led team of 4 engineers maintaining 24/7 platform reliability.</p>
+      <p>Technical lead on delivery infrastructure supporting 4,000+ Walmart stores under 2-hour SLA. Observability-driven workflows cut incident response from 45 to 20 minutes. Diagnosed Cassandra consistency failures, implemented root-cause fixes. Led team of 4 engineers maintaining 24/7 reliability.</p>
       <a href="resume.html" class="pc-link">Full details in resume</a>
     </div>
-
   </div>
 </div>
 
-<!-- WHAT I BUILD -->
 <div class="section" id="experience">
   <div class="section-label">Competencies</div>
   <h2>What I build</h2>
   <p style="color:#555;max-width:660px;">I design systems that enforce correctness and reliability in production environments — particularly in AI systems where failure modes are non-trivial and the cost of a wrong answer is field-dependent.</p>
-
   <div class="build-grid">
     <div class="build-item"><strong>AI infrastructure &amp; control layers</strong><br>Adaptive feedback loops, LLM control planes, calibration pipelines, utility-governed deployment</div>
     <div class="build-item"><strong>Distributed backend systems</strong><br>Microservices, event-driven architecture, Kafka/Flink pipelines, fault isolation at scale</div>
     <div class="build-item"><strong>Pricing &amp; data platforms</strong><br>High-correctness pricing infrastructure, OLAP pipelines, ETL validation, reconciliation at scale</div>
     <div class="build-item"><strong>Observability &amp; reliability</strong><br>Incident response systems, production debugging, SLA enforcement, Prometheus/Grafana/ELK</div>
   </div>
-
   <div style="margin-top:2rem;padding:1.25rem 1.5rem;background:var(--soft);border-radius:10px;max-width:700px;">
-    <p style="font-size:.93rem;color:#333;margin:0;line-height:1.75;"><strong>Background:</strong> PhD in Computer Science (Algorithms &amp; Game Theory) — formally proved Price of Anarchy bounds in multi-agent resource allocation, the same mathematical structure as reward misalignment in RL. The research behind Adaptive Utility Agents applies that foundation directly: the VCG mechanism for arbitration, Lyapunov stability analysis for behavioral dynamics, Kalman-optimal EMA for confidence tracking.</p>
+    <p style="font-size:.93rem;color:#333;margin:0;line-height:1.75;"><strong>Background:</strong> PhD in Computer Science (Algorithms &amp; Game Theory) — formally proved Price of Anarchy bounds in multi-agent resource allocation, the same mathematical structure as reward misalignment in RL. The research behind Adaptive Utility Agents applies that foundation directly: VCG mechanism design for arbitration, Lyapunov stability analysis for behavioral dynamics, Kalman-optimal EMA for confidence tracking.</p>
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-left">
     <strong>Praneeth Tota</strong><br>
-    Sunnyvale, CA ·  <a href="/cdn-cgi/l/email-protection#ef9f9d8e818a8a9b87dddfdfaf88828e8683c18c8082"><span class="__cf_email__" data-cfemail="aadad8cbc4cfcfdec2989a9aeacdc7cbc3c684c9c5c7">[email&#160;protected]</span></a>
+    Sunnyvale, CA &nbsp;·&nbsp; (773) 620-0036 &nbsp;·&nbsp; <a href="/cdn-cgi/l/email-protection#5c2c2e3d32393928346e6c6c1c3b313d3530723f3331"><span class="__cf_email__" data-cfemail="67171506090202130f55575727000a060e0b4904080a">[email&#160;protected]</span></a>
   </div>
   <div class="footer-links">
     <a href="resume.html">Resume</a>
     <a href="https://praneethtota.github.io/Adaptive-Utility-Agent" target="_blank">Research</a>
-    <a href="https
+    <a href="https://www.linkedin.com/in/praneethtota/" target="_blank">LinkedIn</a>
+    <a href="https://github.com/praneethtota" target="_blank">GitHub</a>
+  </div>
+</footer>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     CONTACT MODAL
+     Setup (one-time, ~2 minutes):
+     1. Go to https://formspree.io — sign up free with praneeth200@gmail.com
+     2. Click "New Form" → give it any name → copy the form ID (e.g. xpzgdwqr)
+     3. Replace YOUR_FORM_ID in the action below with that ID
+     4. Deploy — every submission forwards to praneeth200@gmail.com
+     Free tier: 50 submissions/month. No server needed.
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="contactModal" onclick="if(event.target===this)closeModal()">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-header">
+      <div>
+        <div class="modal-title" id="modalTitle">Get in touch</div>
+        <div class="modal-sub">Forwards directly to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c6b6b4a7a8a3a3b2aef4f6f686a1aba7afaae8a5a9ab">[email&#160;protected]</a></div>
+      </div>
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">&#x2715;</button>
+    </div>
+    <div class="form-success" id="formSuccess">
+      <span class="success-icon">&#10003;</span>
+      <p><strong>Message sent.</strong><br>I'll get back to you shortly.</p>
+    </div>
+    <form id="contactForm" action="https://formspree.io/f/xyklzgrb" method="POST">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="cf-name">Name</label>
+          <input type="text" id="cf-name" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label for="cf-email">Your email</label>
+          <input type="email" id="cf-email" name="email" placeholder="you@example.com" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="cf-subject">Subject</label>
+        <input type="text" id="cf-subject" name="subject" placeholder="e.g. Eng role · collaboration · question">
+      </div>
+      <div class="form-group">
+        <label for="cf-message">Message</label>
+        <textarea id="cf-message" name="message" placeholder="What's on your mind?" required></textarea>
+      </div>
+      <div class="form-footer">
+        <span class="form-note">
+          No spam. Sent via <a href="https://formspree.io" target="_blank">Formspree</a>.<br>
+          Or email: <a href="/cdn-cgi/l/email-protection#245456454a4141504c161414644349454d480a474b49"><span class="__cf_email__" data-cfemail="99e9ebf8f7fcfcedf1aba9a9d9fef4f8f0f5b7faf6f4">[email&#160;protected]</span></a>
+        </span>
+        <button type="submit" class="btn-submit" id="submitBtn">Send message</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function openModal(){
+  document.getElementById('contactModal').classList.add('open');
+  setTimeout(function(){document.getElementById('cf-name').focus();},100);
+}
+function closeModal(){
+  document.getElementById('contactModal').classList.remove('open');
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+document.getElementById('contactForm').addEventListener('submit',async function(e){
+  e.preventDefault();
+  var btn=document.getElementById('submitBtn');
+  var form=document.getElementById('contactForm');
+  btn.textContent='Sending\u2026';
+  btn.disabled=true;
+  try{
+    var res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+    if(res.ok){
+      form.style.display='none';
+      document.getElementById('formSuccess').style.display='block';
+      setTimeout(function(){
+        closeModal();
+        setTimeout(function(){
+          form.reset();
+          form.style.d
