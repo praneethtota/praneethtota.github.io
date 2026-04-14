@@ -111,7 +111,7 @@ footer{padding:2rem 2.5rem;border-top:2px solid var(--line);background:#fafaf8;d
     <a href="https://praneethtota.github.io/Adaptive-Utility-Agent" target="_blank">Research</a>
     <a href="https://www.linkedin.com/in/praneethtota/" target="_blank">LinkedIn</a>
     <a href="https://github.com/praneethtota" target="_blank">GitHub</a>
-    <button class="btn-contact" onclick="openModal()">Get in touch</button>
+    <button class="btn-contact" id="openContactBtn">Get in touch</button>
   </div>
 </div>
 
@@ -213,7 +213,7 @@ footer{padding:2rem 2.5rem;border-top:2px solid var(--line);background:#fafaf8;d
 <footer>
   <div class="footer-left">
     <strong>Praneeth Tota</strong><br>
-    Sunnyvale, CA &nbsp;·&nbsp; &nbsp;·&nbsp; <a href="/cdn-cgi/l/email-protection#5c2c2e3d32393928346e6c6c1c3b313d3530723f3331"><span class="__cf_email__" data-cfemail="67171506090202130f55575727000a060e0b4904080a">[email&#160;protected]</span></a>
+    Sunnyvale, CA &nbsp;·&nbsp; (773) 620-0036 &nbsp;·&nbsp; <a href="/cdn-cgi/l/email-protection#5c2c2e3d32393928346e6c6c1c3b313d3530723f3331"><span class="__cf_email__" data-cfemail="67171506090202130f55575727000a060e0b4904080a">[email&#160;protected]</span></a>
   </div>
   <div class="footer-links">
     <a href="resume.html">Resume</a>
@@ -225,23 +225,15 @@ footer{padding:2rem 2.5rem;border-top:2px solid var(--line);background:#fafaf8;d
 
 </div>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     CONTACT MODAL
-     Setup (one-time, ~2 minutes):
-     1. Go to https://formspree.io — sign up free with praneeth200@gmail.com
-     2. Click "New Form" → give it any name → copy the form ID (e.g. xpzgdwqr)
-     3. Replace YOUR_FORM_ID in the action below with that ID
-     4. Deploy — every submission forwards to praneeth200@gmail.com
-     Free tier: 50 submissions/month. No server needed.
-     ═══════════════════════════════════════════════════════════════ -->
-<div class="modal-overlay" id="contactModal" onclick="if(event.target===this)closeModal()">
+<!-- CONTACT MODAL -->
+<div class="modal-overlay" id="contactModal">
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal-header">
       <div>
         <div class="modal-title" id="modalTitle">Get in touch</div>
-        <div class="modal-sub">Forwards directly to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c6b6b4a7a8a3a3b2aef4f6f686a1aba7afaae8a5a9ab">[email&#160;protected]</a></div>
+        <div class="modal-sub">Forwards directly to praneeth200@gmail.com</div>
       </div>
-      <button class="modal-close" onclick="closeModal()" aria-label="Close">&#x2715;</button>
+      <button class="modal-close" id="closeContactBtn" aria-label="Close">&#x2715;</button>
     </div>
     <div class="form-success" id="formSuccess">
       <span class="success-icon">&#10003;</span>
@@ -260,7 +252,7 @@ footer{padding:2rem 2.5rem;border-top:2px solid var(--line);background:#fafaf8;d
       </div>
       <div class="form-group">
         <label for="cf-subject">Subject</label>
-        <input type="text" id="cf-subject" name="subject" placeholder="e.g. Eng role · collaboration · question">
+        <input type="text" id="cf-subject" name="subject" placeholder="e.g. Eng role &middot; collaboration &middot; question">
       </div>
       <div class="form-group">
         <label for="cf-message">Message</label>
@@ -269,7 +261,7 @@ footer{padding:2rem 2.5rem;border-top:2px solid var(--line);background:#fafaf8;d
       <div class="form-footer">
         <span class="form-note">
           No spam. Sent via <a href="https://formspree.io" target="_blank">Formspree</a>.<br>
-          Or email: <a href="/cdn-cgi/l/email-protection#245456454a4141504c161414644349454d480a474b49"><span class="__cf_email__" data-cfemail="99e9ebf8f7fcfcedf1aba9a9d9fef4f8f0f5b7faf6f4">[email&#160;protected]</span></a>
+          Or email: <a href="mailto:praneeth200@gmail.com">praneeth200@gmail.com</a>
         </span>
         <button type="submit" class="btn-submit" id="submitBtn">Send message</button>
       </div>
@@ -277,28 +269,76 @@ footer{padding:2rem 2.5rem;border-top:2px solid var(--line);background:#fafaf8;d
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-function openModal(){
-  document.getElementById('contactModal').classList.add('open');
-  setTimeout(function(){document.getElementById('cf-name').focus();},100);
-}
-function closeModal(){
-  document.getElementById('contactModal').classList.remove('open');
-}
-document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
-document.getElementById('contactForm').addEventListener('submit',async function(e){
-  e.preventDefault();
-  var btn=document.getElementById('submitBtn');
-  var form=document.getElementById('contactForm');
-  btn.textContent='Sending\u2026';
-  btn.disabled=true;
-  try{
-    var res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
-    if(res.ok){
-      form.style.display='none';
-      document.getElementById('formSuccess').style.display='block';
-      setTimeout(function(){
-        closeModal();
-        setTimeout(function(){
-          form.reset();
-          form.style.d
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var overlay = document.getElementById('contactModal');
+  var openBtn = document.getElementById('openContactBtn');
+  var closeBtn = document.getElementById('closeContactBtn');
+  var form = document.getElementById('contactForm');
+  var submitBtn = document.getElementById('submitBtn');
+  var successDiv = document.getElementById('formSuccess');
+
+  function openModal() {
+    overlay.classList.add('open');
+    setTimeout(function() {
+      var nameField = document.getElementById('cf-name');
+      if (nameField) nameField.focus();
+    }, 100);
+  }
+
+  function closeModal() {
+    overlay.classList.remove('open');
+  }
+
+  if (openBtn) openBtn.addEventListener('click', openModal);
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) closeModal();
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  if (form) {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      submitBtn.textContent = 'Sending…';
+      submitBtn.disabled = true;
+      try {
+        var res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          form.style.display = 'none';
+          successDiv.style.display = 'block';
+          setTimeout(function() {
+            closeModal();
+            setTimeout(function() {
+              form.reset();
+              form.style.display = 'block';
+              successDiv.style.display = 'none';
+              submitBtn.textContent = 'Send message';
+              submitBtn.disabled = false;
+            }, 400);
+          }, 3000);
+        } else {
+          submitBtn.textContent = 'Send message';
+          submitBtn.disabled = false;
+          alert('Something went wrong. Email me: praneeth200@gmail.com');
+        }
+      } catch(err) {
+        submitBtn.textContent = 'Send message';
+        submitBtn.disabled = false;
+        alert('Something went wrong. Email me: praneeth200@gmail.com');
+      }
+    });
+  }
+});
+</script>
+
+</body>
+</html>
