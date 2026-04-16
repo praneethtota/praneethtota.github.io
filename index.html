@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Praneeth Tota — Staff Engineer · AI Systems · Distributed Infrastructure</title>
-<meta name="description" content="Senior software engineer with 16+ years across distributed systems, pricing infrastructure, and adaptive AI. Previously Tech Lead at Apple and Walmart. PhD in Algorithms & Game Theory.">
+<meta name="description" content="Staff software engineer with 16+ years across distributed systems, pricing infrastructure, and adaptive AI. Previously Tech Lead at Apple and Walmart. PhD in Algorithms & Game Theory.">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#f7f6f2;--paper:#ffffff;--ink:#18181b;--muted:#6b7280;--line:#e4e1da;--accent:#4338ca;--accent2:#0f766e;--accent3:#c2410c;--soft:#f0ede6;--soft2:#ecfdf5;--soft3:#fff7ed}
@@ -96,9 +96,35 @@ footer{padding:2rem 2.5rem;border-top:2px solid var(--line);background:#fafaf8;d
   .hero{padding:2.5rem 1.5rem 2rem}
   .section{padding:2rem 1.5rem}
   .topbar{padding:.75rem 1.5rem}
-  footer{padding:1.5rem}
+  footer{padding:1.5rem 1.5rem 5rem}
   .form-row{grid-template-columns:1fr}
+  /* hide topbar on phones */
+  .topbar{display:none}
+  /* bottom nav bar for phones */
+  .mobile-nav{display:flex}
 }
+.mobile-nav{
+  display:none;
+  position:fixed;
+  bottom:0;left:0;right:0;
+  background:var(--paper);
+  border-top:1px solid var(--line);
+  z-index:50;
+  padding:.5rem 0 calc(.5rem + env(safe-area-inset-bottom));
+  justify-content:space-around;
+  align-items:center;
+}
+.mobile-nav a,.mobile-nav button{
+  display:flex;flex-direction:column;align-items:center;gap:2px;
+  font-size:.65rem;font-weight:600;color:var(--muted);
+  text-decoration:none;letter-spacing:.04em;text-transform:uppercase;
+  background:none;border:none;cursor:pointer;
+  font-family:'DM Sans',system-ui,sans-serif;
+  padding:.3rem .5rem;
+  transition:color .15s;
+}
+.mobile-nav a:hover,.mobile-nav button:hover{color:var(--accent)}
+.mobile-nav .mn-icon{font-size:1.1rem;line-height:1}
 </style>
 </head>
 <body>
@@ -111,7 +137,7 @@ footer{padding:2rem 2.5rem;border-top:2px solid var(--line);background:#fafaf8;d
     <a href="https://praneethtota.github.io/Adaptive-Utility-Agent" target="_blank">Research</a>
     <a href="https://www.linkedin.com/in/praneethtota/" target="_blank">LinkedIn</a>
     <a href="https://github.com/praneethtota" target="_blank">GitHub</a>
-    <button class="btn-contact" id="openContactBtn">Get in touch</button>
+    <button class="btn-contact" id="openContactBtnDesktop">Get in touch</button>
   </div>
 </div>
 
@@ -119,7 +145,7 @@ footer{padding:2rem 2.5rem;border-top:2px solid var(--line);background:#fafaf8;d
   <div class="hero-eyebrow">Sunnyvale, CA · Staff Engineer · AI Systems · Distributed Infrastructure</div>
   <h1>Building production-grade AI systems that learn from failure — without retraining</h1>
   <div class="hero-sub">
-    <p>16+ years across software engineering, systems design, and academia — PhD in Algorithms &amp; Game Theory.</p>
+    <p>10+ years industry engineering, 6 years doctoral research — PhD in Algorithms &amp; Game Theory.</p>
     <p>Previously Tech Lead at Apple (global pricing infrastructure, contract via Infosys) and Walmart (last-mile delivery, 4,000+ stores, contract via Infosys).</p>
     <p>Currently building adaptive control systems for LLMs: a utility-governed framework that reduces repeated errors by 69.6% without waiting for a new model release.</p>
   </div>
@@ -140,7 +166,7 @@ footer{padding:2rem 2.5rem;border-top:2px solid var(--line);background:#fafaf8;d
     <div class="audience-card">
       <span class="ac-icon">🧑‍💼</span>
       <div class="ac-title">Recruiters &amp; Hiring Managers</div>
-      <p class="ac-desc">10+ years production engineering on critical systems at Apple and Walmart. Hands-on delivery at scale, team leadership, cross-functional ownership.</p>
+      <p class="ac-desc">10+ years software engineering on critical systems at Apple and Walmart. Hands-on delivery at scale, team leadership, cross-functional ownership.</p>
       <div class="ac-links">
         <a href="resume.html">Resume — full experience and skills</a>
         <a href="#experience">Experience summary on this page</a>
@@ -213,7 +239,7 @@ footer{padding:2rem 2.5rem;border-top:2px solid var(--line);background:#fafaf8;d
 <footer>
   <div class="footer-left">
     <strong>Praneeth Tota</strong><br>
-    Sunnyvale, CA &nbsp;·&nbsp; &nbsp;·&nbsp; <a href="/cdn-cgi/l/email-protection#5c2c2e3d32393928346e6c6c1c3b313d3530723f3331"><span class="__cf_email__" data-cfemail="67171506090202130f55575727000a060e0b4904080a">[email&#160;protected]</span></a>
+    Sunnyvale, CA &nbsp;·&nbsp; (773) 620-0036 &nbsp;·&nbsp; <a href="/cdn-cgi/l/email-protection#5c2c2e3d32393928346e6c6c1c3b313d3530723f3331"><span class="__cf_email__" data-cfemail="67171506090202130f55575727000a060e0b4904080a">[email&#160;protected]</span></a>
   </div>
   <div class="footer-links">
     <a href="resume.html">Resume</a>
@@ -224,6 +250,22 @@ footer{padding:2rem 2.5rem;border-top:2px solid var(--line);background:#fafaf8;d
 </footer>
 
 </div>
+
+<!-- mobile bottom nav (phones only) -->
+<nav class="mobile-nav" aria-label="Mobile navigation">
+  <a href="resume.html">
+    <span class="mn-icon">📄</span>Resume
+  </a>
+  <a href="https://praneethtota.github.io/Adaptive-Utility-Agent" target="_blank">
+    <span class="mn-icon">🔬</span>Research
+  </a>
+  <a href="https://www.linkedin.com/in/praneethtota/" target="_blank">
+    <span class="mn-icon">💼</span>LinkedIn
+  </a>
+  <button id="openContactBtn">
+    <span class="mn-icon">✉️</span>Contact
+  </button>
+</nav>
 
 <!-- CONTACT MODAL -->
 <div class="modal-overlay" id="contactModal">
@@ -272,7 +314,7 @@ footer{padding:2rem 2.5rem;border-top:2px solid var(--line);background:#fafaf8;d
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var overlay = document.getElementById('contactModal');
-  var openBtn = document.getElementById('openContactBtn');
+  var openBtns = document.querySelectorAll('#openContactBtnDesktop, #openContactBtn');
   var closeBtn = document.getElementById('closeContactBtn');
   var form = document.getElementById('contactForm');
   var submitBtn = document.getElementById('submitBtn');
@@ -290,7 +332,7 @@ document.addEventListener('DOMContentLoaded', function() {
     overlay.classList.remove('open');
   }
 
-  if (openBtn) openBtn.addEventListener('click', openModal);
+  if (openBtns) openBtns.forEach(function(btn) { btn.addEventListener('click', openModal); });
   if (closeBtn) closeBtn.addEventListener('click', closeModal);
 
   overlay.addEventListener('click', function(e) {
