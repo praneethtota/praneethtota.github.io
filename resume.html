@@ -4,249 +4,55 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Praneeth Tota — Resume</title>
-<meta name="description" content="Resume of Praneeth Tota — Senior Software Engineer, Tech Lead, PhD in Algorithms & Game Theory. Apple, Walmart, Illinois Institute of Technology.">
+<meta name="description" content="Resume of Praneeth Tota — Staff Software Engineer, Tech Lead, PhD in Algorithms & Game Theory. Apple, Walmart, Illinois Institute of Technology.">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #f7f6f2;
-  --paper: #ffffff;
-  --ink: #18181b;
-  --muted: #6b7280;
-  --line: #e4e1da;
-  --accent: #4338ca;
-  --accent2: #0f766e;
-  --accent3: #c2410c;
-  --soft: #f0ede6;
-}
-*, *::before, *::after { box-sizing: border-box; }
-body {
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 15px;
-  line-height: 1.7;
-  color: var(--ink);
-  background: var(--bg);
-  margin: 0;
-  padding: 0;
-}
-.page {
-  max-width: 820px;
-  margin: 0 auto;
-  background: var(--paper);
-  border-left: 1px solid var(--line);
-  border-right: 1px solid var(--line);
-  min-height: 100vh;
-  padding: 0 0 4rem;
-}
-
-/* ── NAV ── */
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .6rem .9rem;
-  padding: .85rem 2.5rem;
-  border-bottom: 1px solid var(--line);
-  background: #fafaf8;
-  font-size: .85rem;
-}
-nav a { color: var(--accent); text-decoration: none; font-weight: 500; }
-nav a:hover { text-decoration: underline; }
-nav a.active { color: var(--ink); font-weight: 600; }
-
-/* ── HEADER ── */
-.resume-header {
-  padding: 2.5rem 2.5rem 2rem;
-  border-bottom: 2px solid var(--line);
-  background: linear-gradient(160deg, #f0ede6 0%, #fff 55%);
-}
-.resume-header h1 {
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-size: 2.4rem;
-  font-weight: 700;
-  margin: 0 0 .3rem;
-  color: var(--ink);
-  line-height: 1.1;
-}
-.contact-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .25rem 1.25rem;
-  font-size: .88rem;
-  color: var(--muted);
-  margin-bottom: 1.5rem;
-}
-.contact-row a { color: var(--accent); text-decoration: none; }
-.contact-row a:hover { text-decoration: underline; }
-.contact-row span { display: flex; align-items: center; gap: .35rem; }
-
-.profile-block {
-  background: var(--soft);
-  border-left: 4px solid var(--accent);
-  border-radius: 0 8px 8px 0;
-  padding: 1rem 1.25rem;
-  font-size: .92rem;
-  line-height: 1.7;
-  color: #333;
-  max-width: 720px;
-}
-.profile-block p { margin: 0 0 .6rem; }
-.profile-block p:last-child { margin: 0; }
-
-/* ── KEY SYSTEMS ── */
-.key-systems {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .5rem;
-  margin-top: 1.25rem;
-}
-.ks-pill {
-  font-size: .8rem;
-  font-weight: 500;
-  padding: .25rem .8rem;
-  border-radius: 999px;
-  border: 1px solid var(--line);
-  color: #444;
-  background: #fff;
-}
-
-/* ── BODY ── */
-.resume-body { padding: 0 2.5rem; }
-
-/* ── SECTION ── */
-.r-section { margin-top: 2rem; padding-top: 1.5rem; border-top: 2px solid var(--line); }
-.r-section:first-child { border-top: none; margin-top: 1.75rem; }
-.r-section-title {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: .72rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  color: var(--accent);
-  margin-bottom: 1.25rem;
-}
-
-/* ── EXPERIENCE ENTRIES ── */
-.exp-entry { margin-bottom: 1.75rem; }
-.exp-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: .25rem;
-  margin-bottom: .25rem;
-}
-.exp-title {
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-size: 1.1rem;
-  font-weight: 400;
-  color: var(--ink);
-}
-.exp-company {
-  font-weight: 600;
-  font-size: .92rem;
-  color: #333;
-}
-.exp-company .via {
-  font-weight: 400;
-  color: var(--muted);
-  font-size: .85rem;
-}
-.exp-date {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: .78rem;
-  color: var(--muted);
-  white-space: nowrap;
-}
-.exp-location {
-  font-size: .83rem;
-  color: var(--muted);
-  margin-bottom: .5rem;
-  font-style: italic;
-}
-.exp-tagline {
-  font-size: .87rem;
-  color: var(--accent2);
-  font-weight: 500;
-  margin-bottom: .5rem;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: .78rem;
-  letter-spacing: .02em;
-}
-.exp-bullets { margin: .25rem 0 0; padding-left: 1.2rem; }
-.exp-bullets li {
-  margin: .35rem 0;
-  font-size: .88rem;
-  color: #333;
-  line-height: 1.65;
-}
-.exp-bullets li strong { color: var(--ink); font-weight: 600; }
-
-/* ── SKILLS ── */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: .75rem;
-  margin-top: .5rem;
-}
-.skill-group { }
-.skill-label {
-  font-size: .78rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .07em;
-  color: var(--muted);
-  margin-bottom: .3rem;
-  font-family: 'JetBrains Mono', monospace;
-}
-.skill-value {
-  font-size: .87rem;
-  color: #333;
-  line-height: 1.55;
-}
-
-/* ── EDUCATION ── */
-.edu-entry {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: .2rem .5rem;
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--line);
-}
-.edu-entry:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-.edu-degree {
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-size: 1.05rem;
-  font-weight: 400;
-}
-.edu-school { font-size: .88rem; color: var(--muted); }
-.edu-year {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: .78rem;
-  color: var(--muted);
-}
-.edu-note {
-  font-size: .84rem;
-  color: #444;
-  margin-top: .25rem;
-  line-height: 1.6;
-  grid-column: 1 / -1;
-}
-
-/* ── PRINT ── */
-@media print {
-  body { background: white; font-size: 13px; }
-  .page { border: none; padding-bottom: 0; }
-  nav { display: none; }
-  .resume-header { background: white; }
-}
-
-@media (max-width: 640px) {
-  .resume-header, .resume-body { padding-left: 1.5rem; padding-right: 1.5rem; }
-  nav { padding: .75rem 1.5rem; }
-  .exp-header { flex-direction: column; }
-}
+:root{--bg:#f7f6f2;--paper:#ffffff;--ink:#18181b;--muted:#6b7280;--line:#e4e1da;--accent:#4338ca;--accent2:#0f766e;--accent3:#c2410c;--soft:#f0ede6}
+*,*::before,*::after{box-sizing:border-box}
+body{font-family:'DM Sans',system-ui,sans-serif;font-size:15px;line-height:1.7;color:var(--ink);background:var(--bg);margin:0;padding:0}
+.page{max-width:820px;margin:0 auto;background:var(--paper);border-left:1px solid var(--line);border-right:1px solid var(--line);min-height:100vh;padding:0 0 4rem}
+nav{display:flex;flex-wrap:wrap;gap:.6rem .9rem;padding:.85rem 2.5rem;border-bottom:1px solid var(--line);background:#fafaf8;font-size:.85rem}
+nav a{color:var(--accent);text-decoration:none;font-weight:500}
+nav a:hover{text-decoration:underline}
+nav a.active{color:var(--ink);font-weight:600}
+.resume-header{padding:2.5rem 2.5rem 2rem;border-bottom:2px solid var(--line);background:linear-gradient(160deg,#f0ede6 0%,#fff 55%)}
+.resume-header h1{font-family:'DM Serif Display',Georgia,serif;font-size:2.4rem;font-weight:700;margin:0 0 .2rem;color:var(--ink);line-height:1.1}
+.title-sub{font-family:'JetBrains Mono',monospace;font-size:.82rem;font-weight:500;color:var(--accent);letter-spacing:.04em;margin-bottom:.9rem}
+.contact-row{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;font-size:.88rem;color:var(--muted);margin-bottom:1.5rem}
+.contact-row a{color:var(--accent);text-decoration:none}
+.contact-row a:hover{text-decoration:underline}
+.contact-row span{display:flex;align-items:center;gap:.35rem}
+.profile-block{background:var(--soft);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:1rem 1.25rem;font-size:.92rem;line-height:1.7;color:#333;max-width:720px}
+.profile-block p{margin:0 0 .6rem}
+.profile-block p:last-child{margin:0}
+.key-systems{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.25rem}
+.ks-pill{font-size:.8rem;font-weight:500;padding:.25rem .8rem;border-radius:999px;border:1px solid var(--line);color:#444;background:#fff}
+.resume-body{padding:0 2.5rem}
+.r-section{margin-top:2rem;padding-top:1.5rem;border-top:2px solid var(--line)}
+.r-section:first-child{border-top:none;margin-top:1.75rem}
+.r-section-title{font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:1.25rem}
+.exp-entry{margin-bottom:1.75rem}
+.exp-header{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.25rem;margin-bottom:.25rem}
+.exp-title{font-family:'DM Serif Display',Georgia,serif;font-size:1.1rem;font-weight:400;color:var(--ink)}
+.exp-company{font-weight:600;font-size:.92rem;color:#333}
+.exp-company .via{font-weight:400;color:var(--muted);font-size:.85rem}
+.exp-date{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--muted);white-space:nowrap}
+.exp-location{font-size:.83rem;color:var(--muted);margin-bottom:.5rem;font-style:italic}
+.exp-tagline{font-size:.78rem;color:var(--accent2);font-weight:500;margin-bottom:.5rem;font-family:'JetBrains Mono',monospace;letter-spacing:.02em}
+.exp-bullets{margin:.25rem 0 0;padding-left:1.2rem}
+.exp-bullets li{margin:.35rem 0;font-size:.88rem;color:#333;line-height:1.65}
+.exp-bullets li strong{color:var(--ink);font-weight:600}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.75rem;margin-top:.5rem}
+.skill-label{font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:.3rem;font-family:'JetBrains Mono',monospace}
+.skill-value{font-size:.87rem;color:#333;line-height:1.55}
+.edu-entry{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.2rem .5rem;margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid var(--line)}
+.edu-entry:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.edu-degree{font-family:'DM Serif Display',Georgia,serif;font-size:1.05rem;font-weight:400}
+.edu-school{font-size:.88rem;color:var(--muted)}
+.edu-year{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--muted)}
+.edu-note{font-size:.84rem;color:#444;margin-top:.25rem;line-height:1.6;grid-column:1 / -1}
+@media print{body{background:white;font-size:13px}.page{border:none;padding-bottom:0}nav{display:none}.resume-header{background:white}}
+@media(max-width:640px){.resume-header,.resume-body{padding-left:1.5rem;padding-right:1.5rem}nav{display:none}.exp-header{flex-direction:column}}
 </style>
 </head>
 <body>
@@ -261,25 +67,27 @@ nav a.active { color: var(--ink); font-weight: 600; }
   <a href="https://github.com/praneethtota" target="_blank">GitHub</a>
 </nav>
 
-<!-- HEADER -->
 <div class="resume-header">
   <h1>Praneeth Tota</h1>
+  <div class="title-sub">Staff Software Engineer · AI Systems · Distributed Infrastructure</div>
   <div class="contact-row">
     <span>Sunnyvale, CA</span>
-   
-    <span><a href="/cdn-cgi/l/email-protection#1b6b697a757e7e6f73292b2b5b7c767a727735787476"><span class="__cf_email__" data-cfemail="57272536393232233f65676717303a363e3b7934383a">[email&#160;protected]</span></a></span>
+    <span>(773) 620-0036</span>
+    <span><a href="mailto:praneeth200@gmail.com">praneeth200@gmail.com</a></span>
     <span><a href="https://www.linkedin.com/in/praneethtota/" target="_blank">LinkedIn</a></span>
     <span><a href="https://github.com/praneethtota" target="_blank">GitHub</a></span>
+    <span><a href="https://praneethtota.github.io" target="_blank">praneethtota.github.io</a></span>
   </div>
 
   <div class="profile-block">
-    <p>Senior Software Engineer with 10+ years of experience designing and operating large-scale distributed systems across pricing, supply chain, and data platforms at Apple and Walmart. Proven track record of owning critical system components end-to-end, driving cross-team technical decisions, and delivering high-reliability platforms under strict performance and correctness constraints.</p>
-    <p>PhD in Computer Science (Algorithms &amp; Game Theory) with a rigorous mathematical foundation in constrained optimization, primal-dual methods, Nash equilibrium theory, and Stackelberg game analysis — the mathematical underpinnings of modern ML training, RLHF, and adversarial optimization. Thesis formally quantified how individual reward maximization degrades collective welfare in multi-agent systems, a problem structurally identical to reward misalignment in RL.</p>
+    <p>Staff Software Engineer with 10+ years of industry experience and 6 years of doctoral research, designing and operating large-scale distributed systems across pricing, supply chain, and data platforms at Apple and Walmart. Proven track record of owning critical system components end-to-end, driving cross-team technical decisions, and delivering high-reliability platforms under strict performance and correctness constraints.</p>
+    <p>PhD in Computer Science (Algorithms &amp; Game Theory) with a rigorous mathematical foundation in constrained optimization, primal-dual methods, Lagrangian relaxation, Nash equilibrium theory, and Stackelberg game analysis — the mathematical underpinnings of modern ML training, RLHF, and adversarial optimization. Thesis formally quantified how individual reward maximization degrades collective welfare in multi-agent systems, a problem structurally identical to reward misalignment in RL. Hands-on experience with PyTorch.</p>
   </div>
 
   <div class="key-systems">
     <span class="ks-pill">Global pricing platform — Apple worldwide</span>
-    <span class="ks-pill">Last-mile delivery — 4,000+ Walmart stores · 2hr SLA</span>
+    <span class="ks-pill">Last-mile delivery — 4,000+ Walmart stores · 2-hr SLA</span>
+    <span class="ks-pill">Adaptive Utility Agents — open-source LLM control plane</span>
     <span class="ks-pill">Streaming OLAP · Kafka → Flink → ClickHouse</span>
   </div>
 </div>
@@ -300,7 +108,7 @@ nav a.active { color: var(--ink); font-weight: 600; }
     </div>
     <div class="skill-group">
       <div class="skill-label">Data &amp; Streaming</div>
-      <div class="skill-value">Kafka, Flink, Redis, ClickHouse, ETL Pipelines</div>
+      <div class="skill-value">Kafka, Flink, Spark, Redis, ClickHouse, ETL Pipelines</div>
     </div>
     <div class="skill-group">
       <div class="skill-label">Cloud &amp; Infrastructure</div>
@@ -371,7 +179,7 @@ nav a.active { color: var(--ink); font-weight: 600; }
   <div class="exp-entry">
     <div class="exp-header">
       <div>
-        <div class="exp-title">PhD Researcher</div>
+        <div class="exp-title">Ph.D. Researcher</div>
         <div class="exp-company">Illinois Institute of Technology</div>
       </div>
       <div class="exp-date">2013 – 2019</div>
@@ -405,13 +213,36 @@ nav a.active { color: var(--ink); font-weight: 600; }
 
 </div>
 
+<!-- OPEN SOURCE PROJECTS -->
+<div class="r-section">
+  <div class="r-section-title">Open Source Projects</div>
+
+  <div class="exp-entry">
+    <div class="exp-header">
+      <div>
+        <div class="exp-title">Adaptive Utility Agents <span style="font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:600;color:var(--accent2);background:#f0fdf4;padding:.15rem .55rem;border-radius:4px;margin-left:.4rem;">Open Source</span></div>
+        <div class="exp-company">Independent Project &nbsp;·&nbsp; <a href="https://github.com/praneethtota/Adaptive-Utility-Agent" target="_blank" style="font-weight:500;color:var(--accent);">github.com/praneethtota/Adaptive-Utility-Agent</a></div>
+      </div>
+      <div class="exp-date">2025 – 2026</div>
+    </div>
+    <div class="exp-location"><a href="https://praneethtota.github.io/Adaptive-Utility-Agent" target="_blank">praneethtota.github.io/Adaptive-Utility-Agent</a></div>
+    <ul class="exp-bullets">
+      <li>Designed and built a <strong>utility-governed correction framework for deployed LLMs</strong> — a control plane that detects errors, stores verified fixes in a persistent assertions store, and prevents recurrence across sessions without waiting for model retraining.</li>
+      <li><strong>Validated through controlled simulation:</strong> 69.6% reduction in repeated errors over an uncalibrated baseline (500-task, 5-cycle study); +10.5% correctness gain from VCG-arbitrated specialist routing (p&nbsp;=&nbsp;0.029); Pearson r&nbsp;=&nbsp;0.461 between utility score and ground-truth correctness (p&nbsp;&lt;&nbsp;10<sup>−40</sup>).</li>
+      <li>Designed automated blue-green deployment triggered by utility deviation — field-calibrated thresholds derived from DPO penalty multipliers; surgical submodels require ≥246 canary interactions before any traffic shift, creative writing promotes in 2.</li>
+      <li>Published full whitepaper (formal proofs: Debreu representation theorem, VCG mechanism design, Lyapunov stability), builder's tutorial with runnable code, and seven domain deep-dives covering autonomous vehicles, energy grids, pricing systems, and AI infrastructure.</li>
+    </ul>
+  </div>
+
+</div>
+
 <!-- EDUCATION -->
 <div class="r-section">
   <div class="r-section-title">Education</div>
 
   <div class="edu-entry">
     <div>
-      <div class="edu-degree">PhD in Computer Science — Algorithms &amp; Game Theory</div>
+      <div class="edu-degree">Ph.D. in Computer Science — Algorithms &amp; Game Theory</div>
       <div class="edu-school">Illinois Institute of Technology, Chicago, IL</div>
       <div class="edu-note">Thesis: Price of Anarchy bounds in multi-agent resource allocation games. Formal proofs connecting individual reward maximization to collective welfare degradation — the mathematical structure underlying reward misalignment in RL and adversarial optimization in modern ML systems.</div>
     </div>
@@ -420,7 +251,7 @@ nav a.active { color: var(--ink); font-weight: 600; }
 
   <div class="edu-entry">
     <div>
-      <div class="edu-degree">MS in Computer Science</div>
+      <div class="edu-degree">M.S. in Computer Science</div>
       <div class="edu-school">Illinois Institute of Technology, Chicago, IL</div>
     </div>
     <div class="edu-year">2010</div>
@@ -428,13 +259,7 @@ nav a.active { color: var(--ink); font-weight: 600; }
 
 </div>
 
-<!-- CURRENT PROJECT -->
-<div class="r-section">
-  <div class="r-section-title">Current Project</div>
-  <div style="background:var(--soft);border-radius:10px;padding:1.25rem 1.5rem;">
-    <div style="font-family:'DM Serif Display',Georgia,serif;font-size:1.1rem;margin-bottom:.4rem;">Adaptive Utility Agents <span style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--accent);font-weight:600;background:#eef2ff;padding:.15rem .5rem;border-radius:4px;margin-left:.5rem;">v0.5 · 2026</span></div>
-    <p style="font-size:.88rem;color:#444;margin:0 0 .75rem;line-height:1.65;">A utility-governed framework for reducing repeated errors in deployed LLMs — without waiting for retraining. Validated: 69.6% repeated-error reduction, +10.5% routing correctness gain (p = 0.029), r = 0.461 utility-correctness correlation (p &lt; 10⁻⁴⁰). Grounded in VCG mechanism design and formal utility theory.</p>
-    <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
-      <a href="https://praneethtota.github.io/Adaptive-Utility-Agent" target="_blank" style="font-size:.83rem;font-weight:600;color:var(--accent);">Documentation site →</a>
-      <a href="https://praneethtota.github.io/Adaptive-Utility-Agent/productionizing_adaptive_utility_agent_v0_5.html" target="_blank" style="font-size:.83rem;font-weight:600;color:var(--accent2);">Production architecture →</a>
-      <a href="https://github.com/praneethtota/Adaptive-Utility-Agent" target="_blank" style="font-size:.8
+</div>
+</div>
+</body>
+</html>
